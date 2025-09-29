@@ -7,4 +7,5 @@ export interface ProductCardProps {
   discountPercent: number;
   rating: number;
   weight?: string;
+  categories: string[]; 
 }
