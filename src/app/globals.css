@@ -7,9 +7,14 @@
   --shadow-article: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
   --shadow-card-shop: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
   --color-primary: #70c05b;
+  --shadow-button-secondary: 4px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 body {
   background-color: #fbf8ec;
   font-family: var(--font-rubik), sans-serif;
+}
+
+.no-ymaps-copyright [class*="copyrights-pane"] {
+  visibility: hidden;
 }
