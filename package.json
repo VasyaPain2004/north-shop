@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@pbe/react-yandex-maps": "^1.2.7",
+    "@iminside/react-yandex-maps": "^1.2.7",
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.3",
     "motion": "^12.23.22",
     "next": "15.5.4",
     "react": "19.1.0",
