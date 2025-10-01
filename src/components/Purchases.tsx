@@ -1,11 +1,11 @@
-import Image from "next/image";
 import ProductCard from "./ProductCard";
 import database from "@/data/database.json";
+import ViewAllButton from "./ViewAllButton";
 
 const Purchases = () => {
   const userPurchases = database.users[0].purchases
     .map((purchase) => {
-      const product = database.products.find((p) => p.id === purchase.id);
+      const product = database.products.find((p) => p._id === purchase._id);
       if (!product) return undefined;
       const { discountPercent, ...rest } = product;
       return rest;
@@ -19,23 +19,12 @@ const Purchases = () => {
           <h2 className="text-2xl xl:text-4xl text-left font-bold text-[#414141]">
             Покупали раньше
           </h2>
-          <button className="flex flex-row items-center gap-x-2 cursor-pointer">
-            <p className="text-base text-center text-[#606060] hover:text-[#bfbfbf] duration-300">
-              Все покупки
-            </p>
-            <Image
-              src="/products/arrow-right.svg"
-              alt="К акциям"
-              width={24}
-              height={24}
-              sizes="24px"
-            />
-          </button>
+          <ViewAllButton btnText="Все покупки" href="purchases" />
         </div>
         <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-10 justify-items-center">
           {userPurchases.slice(0, 4).map((item, index) => (
             <li
-              key={item.id}
+              key={item._id}
               className={`${index >= 4 ? "hidden" : ""}
             ${index >= 3 ? "md:hidden xl:block" : ""}
             ${index >= 4 ? "xl:hidden" : ""}
